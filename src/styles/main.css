@@ -1,0 +1,14 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Дополнительные стили */
+.container {
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    #mobile-menu {
+        transition: all 0.3s ease-in-out;
+    }
+}
