@@ -14,7 +14,7 @@
 ## Технологии
 
 -   HTML5
--   CSS3 с использованием Tailwind CSS
+-   Tailwind CSS
 -   JavaScript (ES6+)
 -   Webpack для сборки проекта
 -   PostCSS для обработки стилей
