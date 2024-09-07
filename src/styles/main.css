@@ -5,10 +5,72 @@
 /* Дополнительные стили */
 .container {
     max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 @media (max-width: 768px) {
     #mobile-menu {
         transition: all 0.3s ease-in-out;
     }
+}
+
+body {
+    background: linear-gradient(to bottom, #e6f2ff, #1e3a8a);
+    min-height: 100vh;
+}
+.content-wrapper {
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-placeholder svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.icon-placeholder {
+    position: relative;
+    z-index: 10;
+}
+
+.icon-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#slider_promo {
+    position: relative;
+    padding: 0 40px; /* Добавляем отступы для стрелок */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: black; /* Зеленый цвет для стрелок */
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 24px; /* Уменьшаем размер стрелок */
+}
+
+.swiper-container {
+    overflow: hidden; /* Чтобы слайды не выходили за пределы контейнера */
 }

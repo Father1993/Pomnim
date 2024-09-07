@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlLoader = require('html-loader')
+const webpack = require('webpack')
 
 module.exports = {
     mode: 'development',
@@ -25,11 +26,36 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset',
+                type: 'asset/resource',
             },
             {
                 test: /\.html$/,
-                use: ['html-loader'],
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            sources: {
+                                list: [
+                                    {
+                                        tag: 'img',
+                                        attribute: 'src',
+                                        type: 'src',
+                                    },
+                                ],
+                            },
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                    },
+                },
             },
         ],
     },
@@ -45,22 +71,10 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [{ from: 'src/assets', to: 'assets' }],
         }),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     optimization: {
-        minimizer: [
-            new ImageMinimizerPlugin({
-                minimizer: {
-                    implementation: ImageMinimizerPlugin.sharpMinify,
-                    options: {
-                        encodeOptions: {
-                            webp: {
-                                quality: 80,
-                            },
-                        },
-                    },
-                },
-            }),
-        ],
+        minimize: false,
     },
     devServer: {
         static: {
@@ -68,6 +82,7 @@ module.exports = {
         },
         compress: true,
         port: 9000,
-        historyApiFallback: true,
+        hot: true, // Убедитесь, что это включено
+        liveReload: true, // Убедитесь, что это включено
     },
 }

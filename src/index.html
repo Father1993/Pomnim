@@ -4,13 +4,228 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Мой сайт</title>
+        <meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+        />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     </head>
     <body class="bg-gray-100">
         <header id="header"></header>
-        <main>
-            <h1 class="text-2xl font-bold text-center smt-8">Привет, мир!</h1>
-            <!-- Основное содержимое страницы -->
+        <main class="container mx-auto px-4 py-8">
+            <div class="content-wrapper p-8">
+                <section class="mt-8 text-center">
+                    <div
+                        class="text-center py-16"
+                    >
+                        <h2
+                            class="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 text-gray-800 leading-tight tracking-tight"
+                        >
+                            <span class="block">Подарок предков -</span>
+                            <span
+                                class="block bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-600"
+                            >наша жизнь</span
+                            >
+                        </h2>
+                        <h5
+                            class="text-2xl md:text-3xl lg:text-4xl mb-10 text-gray-600 font-light leading-relaxed max-w-4xl mx-auto"
+                        >
+                            Сохранение доброй памяти о них -
+                            <span class="font-semibold text-green-700"
+                                >наша Благодарность</span
+                            >
+                        </h5>
+                        <div
+                            class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-10"
+                        ></div>
+                    </div>
+                    <div class="container mx-auto px-4">
+                        <div id="slider_promo" class="mx-auto max-w-6xl relative">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <!-- Слайды -->
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_141800-scaled.jpg"
+                                            alt="Image 1"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_141416-scaled.jpg"
+                                            alt="Image 2"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_140344-scaled.jpg"
+                                            alt="Image 3"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_140407-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_140502-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_140536-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_140540-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_141208-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_141242-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_141745-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_142655-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="assets/img/IMG_20230923_142939-scaled.jpg"
+                                            alt="Image 4"
+                                            class="w-full h-auto"
+                                        />
+                                    </div>
+                                </div>
+                                <!-- Стрелки навигации теперь внутри контейнера слайдера -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="mt-8">
+                    <h1 class="text-4xl font-bold text-center mb-8">
+                        ВСЕ ВИДЫ РАБОТ
+                    </h1>
+                    <div class="flex justify-center">
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="truck"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Отсыпка (песок, щебень, отсев)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="trowel"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Залив монолитного пояса</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="monument"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Установка памятников, ваз, лавочек</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="fence"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Установка оград</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="grass"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Постил зеленого газона</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="border-all"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Укладка гранитной плитки</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="grid"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Укладка брусчатки</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span
+                                    class="w-8 h-8 mr-3 flex items-center justify-center text-green-600 icon-placeholder"
+                                    data-icon="layer-group"
+                                >
+                                    <!-- Иконка будет вставлена здесь -->
+                                </span>
+                                <span>Залив бетонной стяжки</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </main>
-        <div id="footer"></div>
+        <footer id="footer"></footer>
     </body>
 </html>
