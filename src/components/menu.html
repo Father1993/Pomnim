@@ -1,41 +1,48 @@
-<nav class="hidden md:block">
-    <ul class="flex space-x-4 text-black font-bold">
-        <li><a href="#" class="hover:text-gray-700">Главная</a></li>
-        <li><a href="#" class="hover:text-gray-700">О нас</a></li>
-        <li><a href="#" class="hover:text-gray-700">Услуги</a></li>
-        <li><a href="#" class="hover:text-gray-700">Галерея работ</a></li>
-        <li><a href="#" class="hover:text-gray-700">Прайс</a></li>
-        <li><a href="#" class="hover:text-gray-700">Контакты</a></li>
-        <li><a href="#" class="hover:text-gray-700">На карте</a></li>
-    </ul>
-</nav>
-<button id="burger-menu" class="md:hidden text-black">
-    <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
+<div class="relative">
+    <button id="burger-menu" class="burger-menu focus:outline-none">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+    <nav
+        id="mobile-menu"
+        class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden"
     >
-        <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-        ></path>
-    </svg>
-</button>
-<div
-    id="mobile-menu"
-    class="hidden absolute top-full left-0 right-0 bg-white md:hidden"
->
-    <ul class="py-2 px-4 space-y-2 text-black">
-        <li><a href="#" class="hover:text-gray-700">Главная</a></li>
-        <li><a href="#" class="hover:text-gray-700">О нас</a></li>
-        <li><a href="#" class="hover:text-gray-700">Услуги</a></li>
-        <li><a href="#" class="hover:text-gray-700">Галерея работ</a></li>
-        <li><a href="#" class="hover:text-gray-700">Прайс</a></li>
-        <li><a href="#" class="hover:text-gray-700">Контакты</a></li>
-        <li><a href="#" class="hover:text-gray-700">На карте</a></li>
-    </ul>
+        <a
+            href="/"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >Главная</a
+        >
+        <a
+            href="/#about"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >О нас</a
+        >
+        <a
+            href="/#services"
+            class="block px-4 py-2 texts-sm text-gray-700 hover:bg-gray-100"
+            >Услуги</a
+        >
+        <a
+            href="/#accordion"
+            class="block px-4 py-2 texts-sm text-gray-700 hover:bg-gray-100"
+            >Прайс</a
+        >
+
+        <a
+            href="/gallery"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >Примеры работ</a
+        >
+        <a
+            href="/#contacts"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >Контакты</a
+        >
+        <a
+            href="/contacts"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >На карте</a
+        >
+    </nav>
 </div>
