@@ -16,7 +16,7 @@ module.exports = {
         form: './src/js/form.js',
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: 'js/[name].[contenthash].js',
         path: path.resolve(__dirname, 'public'),
         clean: true,
     },
@@ -31,12 +31,10 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset',
-                parser: {
-                    dataUrlCondition: {
-                        maxSize: 10 * 1024, // 10kb
-                    },
+                test: /\.(png|jpe?g|gif|svg|webp)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name][ext]',
                 },
             },
             {
@@ -93,7 +91,7 @@ module.exports = {
             chunks: ['policy'],
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
+            filename: 'assets/styles/[name].[contenthash].css',
         }),
         new CopyWebpackPlugin({
             patterns: [

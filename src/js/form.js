@@ -21,7 +21,9 @@ export function initForm() {
         form.addEventListener('submit', function (e) {
             e.preventDefault()
 
-            if (mask.unmaskedValue.length !== 11) {
+            const phone = phoneInput.value.replace(/\D/g, '') // Получаем только цифры из номера телефона
+
+            if (phone.length !== 11) {
                 alert('Пожалуйста, введите корректный номер телефона')
                 return
             }

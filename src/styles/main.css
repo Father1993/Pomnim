@@ -199,3 +199,23 @@ body {
         height: 300px; /* Высота для экранов от 430px */
     }
 }
+
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+a img {
+    width: 40px; /* Размер иконки WhatsApp */
+    height: 40px;
+    margin-left: 10px; /* Отступ между кнопкой "Наверх" и иконкой WhatsApp */
+}

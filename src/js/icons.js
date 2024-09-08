@@ -7,6 +7,7 @@ import {
     FaBorderAll,
     FaThLarge,
     FaLayerGroup,
+    FaWhatsapp,
 } from 'react-icons/fa'
 
 // Функция для преобразования React-компонента в строку SVG
@@ -30,4 +31,5 @@ export const icons = {
     'border-all': iconToSvg(FaBorderAll),
     grid: iconToSvg(FaThLarge), // Используем FaThLarge для брусчатки
     'layer-group': iconToSvg(FaLayerGroup),
+    whatsapp: iconToSvg(FaWhatsapp),
 }
