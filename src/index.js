@@ -38,6 +38,18 @@ if (module.hot) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.swiper-container', {
-        // ваши настройки Swiper
+        slidesPerView: 1, // По умолчанию показываем 1 слайд
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            // Когда ширина окна >= 768px
+            768: {
+                slidesPerView: 2, // Показываем 2 слайда на десктопах
+                spaceBetween: 30,
+            },
+        },
     })
 })
