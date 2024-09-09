@@ -3,6 +3,7 @@
 
 # Сборка
 /public
+/dist
 
 # Кэш и логи
 npm-debug.log*
