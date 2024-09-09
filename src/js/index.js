@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.classList.add('active')
                     accordionContents[i].classList.remove('hidden')
                     accordionContents[i].classList.add('active')
+
+                    // Прокрутка к началу открытой вкладки
+                    setTimeout(() => {
+                        accordionButtons[index].scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                        })
+                    }, 100)
                 } else {
                     btn.setAttribute('aria-expanded', 'false')
                     btn.classList.remove('active')
@@ -68,16 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     accordionContents[i].classList.remove('active')
                 }
             })
-
-            // Прокрутка к началу открытой вкладки, только если индекс действителен
-            if (index >= 0 && index < accordionButtons.length) {
-                setTimeout(() => {
-                    accordionButtons[index].scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start',
-                    })
-                }, 100)
-            }
         }
 
         accordionButtons.forEach((button, index) => {
@@ -91,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
 
-        // Открыть первую вкладку при загрузке страницы
-        toggleAccordion(0)
+        // Удалим автоматическое открытие первой вкладки при загрузке страницы
+        // toggleAccordion(0)
     }
 
     // Вызов функции инициализации аккордеона

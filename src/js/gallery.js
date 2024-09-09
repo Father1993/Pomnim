@@ -9,7 +9,7 @@ const menu = require('../components/menu.html').default
 
 // Список изображений
 const images = Array.from({ length: 51 }, (_, i) => ({
-    src: `assets/img/gallery/${i + 10}.jpg`,
+    src: `assets/img/gallery/${i + 10}.webp`,
     title: `Благоустройство мест захоронений ${i + 10}`,
 }))
 
