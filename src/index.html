@@ -38,7 +38,6 @@
     
         <!-- Scripts -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     </head>
     <body class="bg-gray-100">
 
@@ -524,23 +523,18 @@
 
                 <section id="accordion" class="py-16">
                     <div class="container mx-auto px-4">
-                        <h2
-                            class="text-4xl font-bold text-center mb-12 text-gray-800"
-                        >
+                        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
                             Выгодные предложение
                         </h2>
-                        <div x-data="{activeTab: 0}" class="space-y-4">
+                        <div class="space-y-4">
                             <!-- Памятники -->
-                            <div
-                                class="bg-white rounded-lg shadow-md overflow-hidden"
-                            >
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
                                 <button
-                                    @click="activeTab = activeTab === 0 ? null : 0"
-                                    class="w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    class="accordion-button w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    aria-expanded="false"
                                 >
                                     <span>Памятники</span>
                                     <svg
-                                        :class="{'rotate-180': activeTab === 0}"
                                         class="w-5 h-5 transition-transform duration-200"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -554,105 +548,92 @@
                                         ></path>
                                     </svg>
                                 </button>
-                                <div
-                                    x-show="activeTab === 0"
-                                    x-transition:enter="transition ease-out duration-300"
-                                    x-transition:enter-start="opacity-0 transform scale-95"
-                                    x-transition:enter-end="opacity-100 transform scale-100"
-                                    x-transition:leave="transition ease-in duration-300"
-                                    x-transition:leave-start="opacity-100 transform scale-100"
-                                    x-transition:leave-end="opacity-0 transform scale-95"
-                                >
-                                    <div class="px-6 py-4">
-                                        <div class="space-y-4 mb-8">
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Памятник из мраморной крошки 80см</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">7 500₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Памятник из мраморной крошки 1м. и выше</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">8 500₽ – 12 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Комплект памятников из гранита 80см (под ключ)</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">30 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Комплект памятников из гранита 1м. (под ключ)</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">40 000₽ – 50 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Гравировка портрета на граните</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">4 500₽</span>
-                                            </div>
+                                <div class="accordion-content px-6 py-4 hidden">
+                                    <div class="space-y-4 mb-8">
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Памятник из мраморной крошки 80см</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">7 500₽</span>
                                         </div>
-                                        <div class="flex justify-between flex-wrap gap-10 accordion-images">
-                                            <img
-                                                src="assets/img/price/1-1.webp"
-                                                alt="Памятник 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-2.webp"
-                                                alt="Памятник 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-3.webp"
-                                                alt="Памятник 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-4.webp"
-                                                alt="Памятник 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-5.webp"
-                                                alt="Памятник 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-7.webp"
-                                                alt="Памятник 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-8.webp"
-                                                alt="Памятник 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-9.webp"
-                                                alt="Памятник 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-10.webp"
-                                                alt="Памятник 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/1-11.webp"
-                                                alt="Памятник 1"
-                                                class="rounded-lg shadow-md"
-                                            />
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Памятник из мраморной крошки 1м. и выше</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">8 500₽ – 12 000₽</span>
                                         </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Комплект памятников из гранита 80см (под ключ)</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">30 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Комплект памятников из гранита 1м. (под ключ)</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">40 000₽ – 50 000₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Гравировка портрета на граните</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">4 500₽</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between flex-wrap gap-10 accordion-images">
+                                        <img
+                                        src="assets/img/price/1-1.webp"
+                                        alt="Памятник 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-2.webp"
+                                        alt="Памятник 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-3.webp"
+                                        alt="Памятник 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-4.webp"
+                                        alt="Памятник 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-5.webp"
+                                        alt="Памятник 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-7.webp"
+                                        alt="Памятник 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-8.webp"
+                                        alt="Памятник 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-9.webp"
+                                        alt="Памятник 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-10.webp"
+                                        alt="Памятник 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/1-11.webp"
+                                        alt="Памятник 1"
+                                        class="rounded-lg shadow-md"
+                                    />
                                     </div>
                                 </div>
                             </div>
-
+                
                             <!-- Благоустройство -->
-                            <div
-                                class="bg-white rounded-lg shadow-md overflow-hidden"
-                            >
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
                                 <button
-                                    @click="activeTab = activeTab === 1 ? null : 1"
-                                    class="w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    class="accordion-button w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    aria-expanded="false"
                                 >
                                     <span>Благоустройство</span>
                                     <svg
-                                        :class="{'rotate-180': activeTab === 1}"
                                         class="w-5 h-5 transition-transform duration-200"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -666,145 +647,132 @@
                                         ></path>
                                     </svg>
                                 </button>
-                                <div
-                                    x-show="activeTab === 1"
-                                    x-transition:enter="transition ease-out duration-300"
-                                    x-transition:enter-start="opacity-0 transform scale-95"
-                                    x-transition:enter-end="opacity-100 transform scale-100"
-                                    x-transition:leave="transition ease-in duration-300"
-                                    x-transition:leave-start="opacity-100 transform scale-100"
-                                    x-transition:leave-end="opacity-0 transform scale-95"
-                                >
-                                    <div class="px-6 py-4">
-                                        <div class="space-y-4 mb-8">
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Планировка</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">1 500₽ – 2 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Залив монолитного пояса 1.5 x 2.0м.</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">20 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Залив монолитного пояса 1.5 x 2.0м.</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">30 000₽ – 35 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Монтаж, демонтаж памятника, стола, лавки</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">1 500₽ – 2 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Отсыпка (песок, щебень, отсев, ПГС)</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">8 000₽ – 12 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Рамка черновая, установочная</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Мраморная крошка</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">1 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Зеленый газон (искусственный) м²</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Укладка брусчатки 30мм (м²)</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Укладка брусчатки 50мм (м²)</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">2 700₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Облицовочная плитка из гранита 1шт</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">6 500₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Монолит 1.5 х 2.0м</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">20 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Монолит 2.5 х 2.5м и больше</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">36 000₽ – 42 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Стяжка 1.5 х 2.0м</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">18 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Стяжка 2.5 х 2.5м и больше</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">36 000₽</span>
-                                            </div>
+                                <div class="accordion-content px-6 py-4 hidden">
+                                    <div class="space-y-4 mb-8">
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Планировка</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">1 500₽ – 2 000₽</span>
                                         </div>
-                                        <div class="flex justify-between flex-wrap gap-10 accordion-images">
-                                            <img
-                                                src="assets/img/price/2-1.webp"
-                                                alt="Благоустройство 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-2.webp"
-                                                alt="Благоустройство 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-3.webp"
-                                                alt="Благоустройство 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-4.webp"
-                                                alt="Благоустройство 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-5.webp"
-                                                alt="Благоустройство 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-6.webp"
-                                                alt="Благоустройство 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-7.webp"
-                                                alt="Благоустройство 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-8.webp"
-                                                alt="Благоустройство 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-9.webp"
-                                                alt="Благоустройство 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/2-10.webp"
-                                                alt="Благоустройство 2"
-                                                class="rounded-lg shadow-md"
-                                            />
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Залив монолитного пояса 1.5 x 2.0м.</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">20 000₽</span>
                                         </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Залив монолитного пояса 1.5 x 2.0м.</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">30 000₽ – 35 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Монтаж, демонтаж памятника, стола, лавки</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">1 500₽ – 2 000₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Отсыпка (песок, щебень, отсев, ПГС)</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">8 000₽ – 12 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Рамка черновая, установочная</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Мраморная крошка</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">1 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Зеленый газон (искусственный) м²</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Укладка брусчатки 30мм (м²)</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Укладка брусчатки 50мм (м²)</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">2 700₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Облицовочная плитка из гранита 1шт</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">6 500₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Монолит 1.5 х 2.0м</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">20 000₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Монолит 2.5 х 2.5м и больше</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">36 000₽ – 42 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Стяжка 1.5 х 2.0м</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">18 000₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Стяжка 2.5 х 2.5м и больше</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">36 000₽</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between flex-wrap gap-10 accordion-images">
+                                        <img
+                                        src="assets/img/price/2-1.webp"
+                                        alt="Благоустройство 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-2.webp"
+                                        alt="Благоустройство 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-3.webp"
+                                        alt="Благоустройство 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-4.webp"
+                                        alt="Благоустройство 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-5.webp"
+                                        alt="Благоустройство 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-6.webp"
+                                        alt="Благоустройство 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-7.webp"
+                                        alt="Благоустройство 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-8.webp"
+                                        alt="Благоустройство 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-9.webp"
+                                        alt="Благоустройство 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/2-10.webp"
+                                        alt="Благоустройство 2"
+                                        class="rounded-lg shadow-md"
+                                    />
                                     </div>
                                 </div>
                             </div>
-
+                
                             <!-- Сопутствующие товары -->
-                            <div
-                                class="bg-white rounded-lg shadow-md overflow-hidden"
-                            >
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
                                 <button
-                                    @click="activeTab = activeTab === 2 ? null : 2"
-                                    class="w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    class="accordion-button w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    aria-expanded="false"
                                 >
                                     <span>Сопутствующие товары</span>
                                     <svg
-                                        :class="{'rotate-180': activeTab === 2}"
                                         class="w-5 h-5 transition-transform duration-200"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -818,64 +786,55 @@
                                         ></path>
                                     </svg>
                                 </button>
-                                <div
-                                    x-show="activeTab === 2"
-                                    x-transition:enter="transition ease-out duration-300"
-                                    x-transition:enter-start="opacity-0 transform scale-95"
-                                    x-transition:enter-end="opacity-100 transform scale-100"
-                                    x-transition:leave="transition ease-in duration-300"
-                                    x-transition:leave-start="opacity-100 transform scale-100"
-                                    x-transition:leave-end="opacity-0 transform scale-95"
-                                >
-                                    <div class="px-6 py-4">
-                                        <div class="space-y-4 mb-8">
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Ваза из гранита 30см</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">7 500₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Ваза из гранита 40см</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">15 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Просверловка памятников, ваз</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Зеленый газон (искусственный) м²</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Установка лавочки из гранита</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">18 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Установка стола из гранита</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">24 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Оградка из черного гранита (пог.метр)</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">14 500₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Табличка из металлокерамики</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">1 500₽ – 2 500₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Мраморная крошка</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">1 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Распил облицовочной плитки 1шт.</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">250₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Облицовочная плитка из гранита 1шт.</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">6 500₽</span>
-                                            </div>
+                                <div class="accordion-content px-6 py-4 hidden">
+                                    <div class="space-y-4 mb-8">
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Ваза из гранита 30см</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">7 500₽</span>
                                         </div>
-                                        <div class="flex justify-between flex-wrap gap-10 accordion-images">
-                                            <img
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Ваза из гранита 40см</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">15 000₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Просверловка памятников, ваз</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Зеленый газон (искусственный) м²</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">2 500₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Установка лавочки из гранита</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">18 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Установка стола из гранита</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">24 000₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Оградка из черного гранита (пог.метр)</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">14 500₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Табличка из металлокерамики</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">1 500₽ – 2 500₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Мраморная крошка</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">1 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Распил облицовочной плитки 1шт.</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">250₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Облицовочная плитка из гранита 1шт.</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">6 500₽</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between flex-wrap gap-10 accordion-images">
+                                        <img
                                                 src="assets/img/price/1-1.webp"
                                                 alt="Товар 1"
                                                 class="rounded-lg shadow-md"
@@ -925,25 +884,18 @@
                                                 alt="Товар 1"
                                                 class="rounded-lg shadow-md"
                                             />
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-
+                
                             <!-- Реставрация / Восстановление / Демонтаж -->
-                            <div
-                                class="bg-white rounded-lg shadow-md overflow-hidden"
-                            >
+                            <div class="bg-white rounded-lg shadow-md overflow-hidden">
                                 <button
-                                    @click="activeTab = activeTab === 3 ? null : 3"
-                                    class="w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    class="accordion-button w-full px-6 py-4 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 focus:outline-none flex justify-between items-center"
+                                    aria-expanded="false"
                                 >
-                                    <span
-                                        >Реставрация / Восстановление /
-                                        Демонтаж</span
-                                    >
+                                    <span>Реставрация / Восстановление / Демонтаж</span>
                                     <svg
-                                        :class="{'rotate-180': activeTab === 3}"
                                         class="w-5 h-5 transition-transform duration-200"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -957,69 +909,60 @@
                                         ></path>
                                     </svg>
                                 </button>
-                                <div
-                                    x-show="activeTab === 3"
-                                    x-transition:enter="transition ease-out duration-300"
-                                    x-transition:enter-start="opacity-0 transform scale-95"
-                                    x-transition:enter-end="opacity-100 transform scale-100"
-                                    x-transition:leave="transition ease-in duration-300"
-                                    x-transition:leave-start="opacity-100 transform scale-100"
-                                    x-transition:leave-end="opacity-0 transform scale-95"
-                                >
-                                    <div class="px-6 py-4">
-                                        <div class="space-y-4 mb-8">
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Демонтаж старой брусчатки:</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">6
-                                                    500₽ – 9 000₽</span>
-                                            </div>
-                                            <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Демонтаж старого монолитного
-                                                    пояса:</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">6 500₽ – 9 000₽</span>
-                                            </div>
-                                            <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                                                <span class="text-gray-800 font-medium">Отсыпка:</span>
-                                                <span class="text-green-600 font-bold mt-1 sm:mt-0">8 000₽ – 12 000₽</span>
-                                            </div>
+                                <div class="accordion-content px-6 py-4 hidden">
+                                    <div class="space-y-4 mb-8">
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Демонтаж старой брусчатки:</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">6
+                                                500₽ – 9 000₽</span>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Демонтаж старого монолитного
+                                                пояса:</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">6 500₽ – 9 000₽</span>
+                                        </div>
+                                        <div class="bg-gray-100 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                            <span class="text-gray-800 font-medium">Отсыпка:</span>
+                                            <span class="text-green-600 font-bold mt-1 sm:mt-0">8 000₽ – 12 000₽</span>
+                                        </div>
 
-                                        </div>
-                                        <div class="flex justify-between flex-wrap gap-10 accordion-images">
-                                            <img
-                                                src="assets/img/price/4-1.webp"
-                                                alt="Реставрация 1"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/4-2.webp"
-                                                alt="Реставрация 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/4-3.webp"
-                                                alt="Реставрация 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/4-4.webp"
-                                                alt="Реставрация 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/4-5.webp"
-                                                alt="Реставрация 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                            <img
-                                                src="assets/img/price/4-6.webp"
-                                                alt="Реставрация 2"
-                                                class="rounded-lg shadow-md"
-                                            />
-                                        </div>
+                                    </div>
+                                    <div class="flex justify-between flex-wrap gap-10 accordion-images">
+                                        <img
+                                        src="assets/img/price/4-1.webp"
+                                        alt="Реставрация 1"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/4-2.webp"
+                                        alt="Реставрация 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/4-3.webp"
+                                        alt="Реставрация 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/4-4.webp"
+                                        alt="Реставрация 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/4-5.webp"
+                                        alt="Реставрация 2"
+                                        class="rounded-lg shadow-md"
+                                    />
+                                    <img
+                                        src="assets/img/price/4-6.webp"
+                                        alt="Реставрация 2"
+                                        class="rounded-lg shadow-md"
+                                    />
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </section>
 
                 <section id="special-text" class="bg-gradient-to-r from-green-50 to-blue-50 py-16">

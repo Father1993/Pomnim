@@ -214,6 +214,42 @@ body {
     cursor: pointer;
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+#whatsAppBtn {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 40px;
+    z-index: 99;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    cursor: pointer;
+    background-color: #25d366; /* Цвет WhatsApp */
+    animation: pulse 2s infinite;
+}
+
+#whatsAppBtn img {
+    width: 40px; /* Размер иконки внутри кнопки */
+    height: 40px;
+    display: block;
+    margin: auto;
+}
+
 a img {
     width: 40px; /* Размер иконки WhatsApp */
     height: 40px;

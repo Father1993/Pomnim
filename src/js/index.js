@@ -30,13 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholder.innerHTML = icons[iconName]
         }
     })
-})
 
-if (module.hot) {
-    module.hot.accept()
-}
-
-document.addEventListener('DOMContentLoaded', function () {
+    // Инициализация Swiper
     const swiper = new Swiper('.swiper-container', {
         slidesPerView: 1, // По умолчанию показываем 1 слайд
         spaceBetween: 30,
@@ -52,6 +47,56 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         },
     })
+
+    // Функция для управления аккордеоном
+    function initAccordion() {
+        const accordionButtons = document.querySelectorAll('.accordion-button')
+        const accordionContents =
+            document.querySelectorAll('.accordion-content')
+
+        function toggleAccordion(index) {
+            accordionButtons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.setAttribute('aria-expanded', 'true')
+                    btn.classList.add('active')
+                    accordionContents[i].classList.remove('hidden')
+                    accordionContents[i].classList.add('active')
+                } else {
+                    btn.setAttribute('aria-expanded', 'false')
+                    btn.classList.remove('active')
+                    accordionContents[i].classList.add('hidden')
+                    accordionContents[i].classList.remove('active')
+                }
+            })
+
+            // Прокрутка к началу открытой вкладки, только если индекс действителен
+            if (index >= 0 && index < accordionButtons.length) {
+                setTimeout(() => {
+                    accordionButtons[index].scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                    })
+                }, 100)
+            }
+        }
+
+        accordionButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const isActive = button.classList.contains('active')
+                if (isActive) {
+                    toggleAccordion(-1) // Закрыть все вкладки
+                } else {
+                    toggleAccordion(index)
+                }
+            })
+        })
+
+        // Открыть первую вкладку при загрузке страницы
+        toggleAccordion(0)
+    }
+
+    // Вызов функции инициализации аккордеона
+    initAccordion()
 })
 
 // Функционал кнопки наверх
@@ -59,48 +104,44 @@ window.onscroll = function () {
     scrollFunction()
 }
 
+// Кнопка "Наверх"
+let scrollToTopBtn
+// Кнопка whatsapp
+let whatsappBtn
+
+document.addEventListener('DOMContentLoaded', () => {
+    scrollToTopBtn = document.getElementById('scrollToTopBtn')
+    whatsappBtn = document.getElementById('whatsAppBtn')
+})
+
 function scrollFunction() {
     if (
         document.body.scrollTop > 200 ||
         document.documentElement.scrollTop > 200
     ) {
-        document.getElementById('scrollToTopBtn').style.display = 'block'
+        scrollToTopBtn.style.display = 'block'
+        whatsappBtn.style.display = 'block'
     } else {
-        document.getElementById('scrollToTopBtn').style.display = 'none'
+        scrollToTopBtn.style.display = 'none'
+        whatsappBtn.style.display = 'none'
     }
 }
-
-// Найти кнопку "Наверх"
-const scrollToTopBtn = document.getElementById('scrollToTopBtn')
 
 // Делегирование событий для кнопки "Наверх"
 document.addEventListener('click', function (event) {
     if (event.target && event.target.id === 'scrollToTopBtn') {
         // Получить текущую позицию прокрутки
-        var currentPosition =
+        let currentPosition =
             document.documentElement.scrollTop || document.body.scrollTop
 
         // Прокрутить страницу вверх плавно
-        var scrollInterval = setInterval(function () {
+        let scrollInterval = setInterval(function () {
             if (currentPosition > 0) {
-                window.scrollBy(0, -50) // Скорость прокрутки - 50px
-                currentPosition -= 50
+                window.scrollBy(0, -100) // Скорость прокрутки - 50px
+                currentPosition -= 100
             } else {
                 clearInterval(scrollInterval)
             }
         }, 10) // Интервал прокрутки - 10ms
-    }
-})
-
-// Получаю кнопку
-const whatsappBtn = document.getElementById('whatsappBtn')
-
-document.addEventListener('scroll', () => {
-    if (whatsappBtn) {
-        if (window.scrollY > 200) {
-            whatsappBtn.style.display = 'block'
-        } else {
-            whatsappBtn.style.display = 'none'
-        }
     }
 })
