@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Правовая информация - Помним Скорбим</title>
+        <meta
+            name="description"
+            content="Юридическая информация об обработке персональных данных и использовании cookies на сайте Помним Скорбим"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link href="../src/styles/output.css" rel="stylesheet" />
+        <script type="module" src="./index.js"></script>
+    </head>
+    <body class="antialiased font-sans bg-gray-100">
+        <header-component></header-component>
+
+        <main
+            class="container mx-auto px-4 py-8 my-8 bg-white shadow-md rounded-lg max-w-4xl"
+        >
+            <h1 class="text-3xl font-bold mb-6 text-center">
+                Правовая информация
+            </h1>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Информация об обработке персональных данных
+                </h2>
+                <p class="mb-4">
+                    Настоящим уведомляем посетителей сайта
+                    <strong>помнимскорбим.рф</strong> о том, что:
+                </p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>
+                        Сайт используется исключительно в информационных целях и
+                        не осуществляет продажу товаров или услуг через
+                        интернет.
+                    </li>
+                    <li>
+                        На сайте используются следующие технологии отслеживания:
+                        Яндекс Метрика и Google Search Console (инструменты
+                        аналитики посещаемости).
+                    </li>
+                    <li>
+                        Мы не осуществляем рассылку информационных сообщений.
+                    </li>
+                    <li>
+                        Мы не собираем персональные данные посетителей через
+                        формы обратной связи.
+                    </li>
+                    <li>
+                        При использовании сайта в cookies могут сохраняться
+                        технические данные, необходимые для корректной работы
+                        сайта.
+                    </li>
+                </ol>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    2. Использование файлов cookie
+                </h2>
+                <p class="mb-4">
+                    При посещении сайта <strong>помнимскорбим.рф</strong> на
+                    ваше устройство могут быть записаны файлы cookie, которые
+                    помогают улучшить качество представления информации.
+                </p>
+                <p class="mt-4">
+                    Вы можете отключить сохранение cookies в настройках вашего
+                    браузера, однако это может повлиять на функциональность
+                    сайта.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Согласие на обработку данных
+                </h2>
+                <p class="mb-4">
+                    Используя сайт <strong>помнимскорбим.рф</strong>, вы
+                    соглашаетесь с обработкой ваших данных в соответствии с
+                    настоящей правовой информацией. Мы обязуемся не передавать
+                    ваши данные третьим лицам, за исключением случаев,
+                    предусмотренных законодательством РФ.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Контактная информация
+                </h2>
+                <p class="mb-4">
+                    Если у вас возникли вопросы по обработке персональных данных
+                    или использованию cookies, вы можете связаться с нами:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                        Телефон:
+                        <a
+                            href="tel:+79098080303"
+                            class="text-blue-600 hover:text-blue-800"
+                            >+7 (909) 808-03-03</a
+                        >
+                    </li>
+                    <li>
+                        WhatsApp:
+                        <a
+                            href="https://wa.me/79098080303"
+                            target="_blank"
+                            class="text-blue-600 hover:text-blue-800"
+                            >+7 (909) 808-03-03</a
+                        >
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer-component></footer-component>
+
+        <script type="module">
+            import { initCookieConsent } from './js/form.js'
+            initCookieConsent()
+        </script>
+    </body>
+</html>

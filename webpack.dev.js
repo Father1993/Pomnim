@@ -13,6 +13,7 @@ module.exports = {
         gallery: './src/js/gallery.js',
         policy: './src/js/policy.js',
         form: './src/js/form.js',
+        swiper: ['./node_modules/swiper/swiper-bundle.min.js'],
     },
     output: {
         filename: 'js/[name].[contenthash].js',
@@ -89,6 +90,41 @@ module.exports = {
             filename: 'policy.html',
             chunks: ['policy'],
         }),
+        new HtmlWebpackPlugin({
+            template: './src/legal.html',
+            filename: 'legal.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/terms.html',
+            filename: 'terms.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/consent.html',
+            filename: 'consent.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/metrics-consent.html',
+            filename: 'metrics-consent.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/recommendations.html',
+            filename: 'recommendations.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/requisites.html',
+            filename: 'requisites.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/juridical-info.html',
+            filename: 'juridical-info.html',
+            chunks: ['main'],
+        }),
         new MiniCssExtractPlugin({
             filename: 'assets/styles/[name].[contenthash].css',
         }),
@@ -127,7 +163,14 @@ module.exports = {
             rewrites: [
                 { from: /^\/$/, to: '/index.html' },
                 { from: /^\/gallery/, to: '/gallery.html' },
-                { from: /^\/gallery/, to: '/policy.html' },
+                { from: /^\/policy/, to: '/policy.html' },
+                { from: /^\/legal/, to: '/legal.html' },
+                { from: /^\/terms/, to: '/terms.html' },
+                { from: /^\/consent/, to: '/consent.html' },
+                { from: /^\/metrics-consent/, to: '/metrics-consent.html' },
+                { from: /^\/recommendations/, to: '/recommendations.html' },
+                { from: /^\/requisites/, to: '/requisites.html' },
+                { from: /^\/juridical-info/, to: '/juridical-info.html' },
             ],
         },
     },

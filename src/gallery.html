@@ -102,6 +102,12 @@
                 <!-- Изображения будут добавлены здесь динамически -->
             </div>
         </main>
-        <footer id="footer"></footer>
+        <footer-component></footer-component>
+        <script type="module">
+            import { initCookieConsent } from './js/form.js'
+
+            // Инициализация уведомления о политике конфиденциальности
+            initCookieConsent()
+        </script>
     </body>
 </html>

@@ -1,51 +1,45 @@
-import IMask from 'imask'
-import emailjs from 'emailjs-com'
-
-export function initForm() {
+// Функция для отображения всплывающего уведомления о персональных данных и куки
+export function initCookieConsent() {
     document.addEventListener('DOMContentLoaded', function () {
-        const phoneInput = document.getElementById('phone')
-        const maskOptions = {
-            mask: '+{7}(000)000-00-00',
-            lazy: false,
+        // Проверяем, было ли уже показано уведомление и принято пользователем
+        if (!localStorage.getItem('policyAccepted')) {
+            // Создаем элемент уведомления
+            const consentBanner = document.createElement('div')
+            consentBanner.className =
+                'policy-banner fixed bottom-0 left-0 w-full bg-blue-600 text-white p-4 shadow-lg z-50'
+            consentBanner.innerHTML = `
+                <div class="container mx-auto px-2 sm:px-4 flex flex-col items-center justify-between">
+                    <div class="mb-4 text-center">
+                        <p class="mb-2 text-sm sm:text-base">
+                            Продолжая использовать наш сайт, вы даете согласие на обработку данных в соответствии с нашими юридическими документами
+                        </p>
+                    </div>
+                    <div class="flex space-x-2 mb-2">
+                        <a href="/juridical-info.html" class="text-white underline text-xs sm:text-sm">Подробнее</a>
+                        <button id="acceptPolicy" class="bg-white text-blue-600 px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm rounded">Принять</button>
+                        <button id="declinePolicy" class="border border-white text-white px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm rounded">Отклонить</button>
+                    </div>
+                </div>
+            `
+
+            // Добавляем на страницу
+            document.body.appendChild(consentBanner)
+
+            // Обработчики событий для кнопок
+            document
+                .getElementById('acceptPolicy')
+                .addEventListener('click', function () {
+                    localStorage.setItem('policyAccepted', 'true')
+                    consentBanner.remove()
+                })
+
+            document
+                .getElementById('declinePolicy')
+                .addEventListener('click', function () {
+                    alert(
+                        'Для использования сайта необходимо принять правовую информацию и дать согласие на обработку данных.'
+                    )
+                })
         }
-        const mask = IMask(phoneInput, maskOptions)
-
-        phoneInput.addEventListener('input', function () {
-            if (this.value.startsWith('8')) {
-                this.value = '+7' + this.value.slice(1)
-                mask.updateValue()
-            }
-        })
-
-        const form = document.getElementById('contactForm')
-        form.addEventListener('submit', function (e) {
-            e.preventDefault()
-
-            const phone = phoneInput.value.replace(/\D/g, '') // Получаем только цифры из номера телефона
-
-            if (phone.length !== 11) {
-                alert('Пожалуйста, введите корректный номер телефона')
-                return
-            }
-
-            emailjs
-                .sendForm(
-                    'service_rnp5rzo',
-                    'template_znw1zvo',
-                    this,
-                    'QlnHU5eUYzTWAA9kN'
-                )
-                .then(
-                    (result) => {
-                        alert('Ваша заявка успешно отправлена!')
-                        form.reset()
-                    },
-                    (error) => {
-                        alert(
-                            'Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.'
-                        )
-                    }
-                )
-        })
     })
 }

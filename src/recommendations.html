@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Использование рекомендательных технологий - Помним Скорбим
+        </title>
+        <meta
+            name="description"
+            content="Информация об использовании рекомендательных технологий на сайте Помним Скорбим"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link href="../src/styles/output.css" rel="stylesheet" />
+        <script type="module" src="./index.js"></script>
+    </head>
+    <body class="antialiased font-sans bg-gray-100">
+        <header-component></header-component>
+
+        <main
+            class="container mx-auto px-4 py-8 my-8 bg-white shadow-md rounded-lg max-w-4xl"
+        >
+            <h1 class="text-3xl font-bold mb-6 text-center">
+                Использование рекомендательных технологий
+            </h1>
+
+            <section class="mb-8">
+                <p class="mb-4">
+                    На нашем сайте <strong>помнимскорбим.рф</strong> мы не
+                    используем рекомендательные технологии, которые анализируют
+                    поведение пользователей и предлагают персонализированный
+                    контент на основе этого анализа.
+                </p>
+                <p class="mb-4">
+                    Мы не применяем алгоритмы, которые автоматически формируют
+                    персонализированные рекомендации для пользователей на основе
+                    их интересов, предпочтений, истории просмотров или других
+                    персональных данных.
+                </p>
+                <p class="mb-4">
+                    Вся информация, представленная на нашем сайте, является
+                    статичной и одинаковой для всех пользователей. Это связано с
+                    характером предоставляемых нами услуг и нашим стремлением
+                    обеспечить одинаково высокий уровень информационной
+                    поддержки для всех посетителей сайта.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Сбор и анализ данных
+                </h2>
+                <p class="mb-4">
+                    Несмотря на то, что мы не используем рекомендательные
+                    технологии, мы собираем обезличенные данные о посещаемости
+                    сайта с помощью сервиса Яндекс.Метрика. Эти данные
+                    используются исключительно для анализа общей статистики
+                    посещаемости сайта и не применяются для формирования
+                    персонализированных рекомендаций.
+                </p>
+                <p class="mb-4">
+                    Подробную информацию о том, какие данные мы собираем и как
+                    их используем, вы можете найти в нашей
+                    <a href="/policy.html" class="text-blue-600 hover:underline"
+                        >Политике конфиденциальности</a
+                    >
+                    и
+                    <a
+                        href="/metrics-consent.html"
+                        class="text-blue-600 hover:underline"
+                        >Согласии на обработку данных метрическими
+                        программами</a
+                    >.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Изменения в использовании рекомендательных технологий
+                </h2>
+                <p class="mb-4">
+                    В случае, если в будущем мы решим внедрить рекомендательные
+                    технологии на нашем сайте, мы обязательно обновим данный
+                    документ и уведомим пользователей об этих изменениях.
+                </p>
+                <p class="mb-4">
+                    Любое использование рекомендательных технологий будет
+                    осуществляться в соответствии с требованиями
+                    законодательства Российской Федерации о персональных данных
+                    и при наличии явного согласия пользователей.
+                </p>
+                <p class="mb-8">Дата последнего обновления: 01.06.2023</p>
+            </section>
+        </main>
+
+        <footer-component></footer-component>
+
+        <script type="module">
+            import { initCookieConsent } from './js/form.js'
+            initCookieConsent()
+        </script>
+    </body>
+</html>

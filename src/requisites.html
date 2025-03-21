@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Реквизиты компании - Помним Скорбим</title>
+        <meta
+            name="description"
+            content="Реквизиты компании Помним Скорбим, предоставляющей ритуальные услуги и благоустройство мест захоронения в Хабаровске"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link href="../src/styles/output.css" rel="stylesheet" />
+        <script type="module" src="./index.js"></script>
+    </head>
+    <body class="antialiased font-sans bg-gray-100">
+        <header-component></header-component>
+
+        <main
+            class="container mx-auto px-4 py-8 my-8 bg-white shadow-md rounded-lg max-w-4xl"
+        >
+            <h1 class="text-3xl font-bold mb-6 text-center">
+                Реквизиты компании
+            </h1>
+
+            <section class="mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4">
+                            Юридическая информация
+                        </h2>
+                        <ul class="space-y-2">
+                            <li>
+                                <strong>Полное наименование:</strong>
+                                Индивидуальный предприниматель Иванов Иван
+                                Иванович
+                            </li>
+                            <li><strong>ИНН:</strong> 770000000000</li>
+                            <li><strong>ОГРНИП:</strong> 000000000000000</li>
+                            <li>
+                                <strong>Дата регистрации:</strong> 01.01.2020
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4">
+                            Контактная информация
+                        </h2>
+                        <ul class="space-y-2">
+                            <li>
+                                <strong>Адрес:</strong> г. Хабаровск, ул.
+                                Примерная, д. 1
+                            </li>
+                            <li>
+                                <strong>Телефон:</strong>
+                                <a
+                                    href="tel:+79098080303"
+                                    class="text-blue-600 hover:underline"
+                                    >+7 (909) 808-03-03</a
+                                >
+                            </li>
+                            <li>
+                                <strong>WhatsApp:</strong>
+                                <a
+                                    href="https://wa.me/79098080303"
+                                    class="text-blue-600 hover:underline"
+                                    target="_blank"
+                                    >+7 (909) 808-03-03</a
+                                >
+                            </li>
+                            <li>
+                                <strong>Время работы:</strong> ежедневно с 9:00
+                                до 21:00
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Банковские реквизиты
+                </h2>
+                <ul class="space-y-2">
+                    <li>
+                        <strong>Расчетный счет:</strong> 40000000000000000000
+                    </li>
+                    <li><strong>Банк:</strong> ПАО Сбербанк</li>
+                    <li><strong>БИК:</strong> 000000000</li>
+                    <li><strong>Корр. счет:</strong> 30000000000000000000</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Юридически значимая информация
+                </h2>
+                <p class="mb-4">
+                    В соответствии с требованиями законодательства Российской
+                    Федерации, наш сайт размещает следующие документы:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                        <a
+                            href="/policy.html"
+                            class="text-blue-600 hover:underline"
+                            >Политика конфиденциальности</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/terms.html"
+                            class="text-blue-600 hover:underline"
+                            >Пользовательское соглашение</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/consent.html"
+                            class="text-blue-600 hover:underline"
+                            >Согласие на обработку персональных данных</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/metrics-consent.html"
+                            class="text-blue-600 hover:underline"
+                            >Согласие на обработку данных метрическими
+                            программами</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/legal.html"
+                            class="text-blue-600 hover:underline"
+                            >Правовая информация</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/recommendations.html"
+                            class="text-blue-600 hover:underline"
+                            >Использование рекомендательных технологий</a
+                        >
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer-component></footer-component>
+
+        <script type="module">
+            import { initCookieConsent } from './js/form.js'
+            initCookieConsent()
+        </script>
+    </body>
+</html>
