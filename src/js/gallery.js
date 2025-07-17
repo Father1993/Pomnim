@@ -8,10 +8,18 @@ const footer = require('../components/footer.html').default
 const menu = require('../components/menu.html').default
 
 // Список изображений
-const images = Array.from({ length: 92 }, (_, i) => ({
-    src: `assets/img/gallery/${92 - i}.webp`,
-    title: `Благоустройство мест захоронений ${92 - i}`,
-}))
+const images = [
+    // Существующие изображения (1-92)
+    ...Array.from({ length: 92 }, (_, i) => ({
+        src: `assets/img/gallery/${92 - i}.webp`,
+        title: `Благоустройство мест захоронений ${92 - i}`,
+    })),
+    // Новые изображения из папки 15_07
+    ...Array.from({ length: 33 }, (_, i) => ({
+        src: `assets/img/gallery/15_07/z (${i + 1}).webp`,
+        title: `Благоустройство мест захоронений - новые работы ${i + 1}`,
+    })),
+]
 
 document.addEventListener('DOMContentLoaded', () => {
     // Вставка header и footer
